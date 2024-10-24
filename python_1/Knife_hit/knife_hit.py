@@ -1,36 +1,62 @@
-def main():
-    # Show a welcome message
-    print("Welcome to the Knife/Weapon Game!")
+import tkinter as tk
+import random
+import math
 
-    # Ask if they are allowed to play
-    allowed_to_play = input("Are you allowed to play this game? (yes/no): ").strip().lower()
+# Game constants
+WIDTH, HEIGHT = 800, 600
+TARGET_RADIUS = 50
 
-    if allowed_to_play != "yes":
-        print("Please log out. You are not allowed to play.")
-        return  # End the program
+class KnifeThrowingGame:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Knife Throwing Game")
+        self.canvas = tk.Canvas(master, width=WIDTH, height=HEIGHT, bg='white')
+        self.canvas.pack()
+        
+        self.target_x = WIDTH // 2
+        self.target_y = HEIGHT // 2
+        self.score = 0
+        self.attempts = 0
 
-    # If yes, ask for a username
-    username = input("Please enter your desired username: ").strip()
+        self.draw_target()
+        self.canvas.bind("<Button-1>", self.throw_knife)
 
-    # Give the user 3 options for their first weapon choice
-    weapons = ["Dagger", "Sword", "Axe"]
-    print("Choose your weapon:")
-    for idx, weapon in enumerate(weapons, start=1):
-        print(f"{idx}. {weapon}")
+        self.score_label = tk.Label(master, text=f"Score: {self.score} Attempts: {self.attempts}")
+        self.score_label.pack()
 
-    weapon_choice = input("Enter the number of your weapon choice: ")
-    
-    try:
-        choice_index = int(weapon_choice) - 1
-        if 0 <= choice_index < len(weapons):
-            print(f"{username}, you have chosen the {weapons[choice_index]}!")
+    def draw_target(self):
+        """Draw the target on the canvas."""
+        self.canvas.delete("target")  # Remove previous target
+        self.canvas.create_oval(
+            self.target_x - TARGET_RADIUS, 
+            self.target_y - TARGET_RADIUS,
+            self.target_x + TARGET_RADIUS, 
+            self.target_y + TARGET_RADIUS,
+            fill='red', 
+            tags="target"
+        )
+
+    def throw_knife(self, event):
+        """Handle the knife throw event."""
+        mouse_x, mouse_y = event.x, event.y
+        distance = math.sqrt((mouse_x - self.target_x) ** 2 + (mouse_y - self.target_y) ** 2)
+
+        if distance <= TARGET_RADIUS:
+            self.score += 1
+            result = "Hit!"
         else:
-            print("Invalid choice. Please restart the game.")
-    except ValueError:
-        print("Invalid input. Please enter a number.")
+            self.attempts += 1
+            result = "Missed!"
 
-    # End the program
-    print("Thank you for playing!")
+        self.update_score_label()
+        self.draw_target()
+        print(result)
+
+    def update_score_label(self):
+        """Update the score display."""
+        self.score_label.config(text=f"Score: {self.score} Attempts: {self.attempts}")
 
 if __name__ == "__main__":
-    main()
+    root = tk.Tk()
+    game = KnifeThrowingGame(root)
+    root.mainloop()
