@@ -1,0 +1,15 @@
+/Users/student/Documents/Khan's DAE project/c#_1/bin/Debug/net9.0/c#_1
+/Users/student/Documents/Khan's DAE project/c#_1/bin/Debug/net9.0/c#_1.deps.json
+/Users/student/Documents/Khan's DAE project/c#_1/bin/Debug/net9.0/c#_1.runtimeconfig.json
+/Users/student/Documents/Khan's DAE project/c#_1/bin/Debug/net9.0/c#_1.dll
+/Users/student/Documents/Khan's DAE project/c#_1/bin/Debug/net9.0/c#_1.pdb
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/c#_1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/c#_1.AssemblyInfoInputs.cache
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/c#_1.AssemblyInfo.cs
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/c#_1.csproj.CoreCompileInputs.cache
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/c#_1.sourcelink.json
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/c#_1.dll
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/refint/c#_1.dll
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/c#_1.pdb
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/c#_1.genruntimeconfig.cache
+/Users/student/Documents/Khan's DAE project/c#_1/obj/Debug/net9.0/ref/c#_1.dll
